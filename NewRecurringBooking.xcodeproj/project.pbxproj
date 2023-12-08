@@ -1,0 +1,593 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C772B9062B22F522000DD076 /* NewRecurringBookingApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C772B9052B22F522000DD076 /* NewRecurringBookingApp.swift */; };
+		C772B9082B22F522000DD076 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C772B9072B22F522000DD076 /* ContentView.swift */; };
+		C772B90A2B22F524000DD076 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C772B9092B22F524000DD076 /* Assets.xcassets */; };
+		C772B90D2B22F524000DD076 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C772B90C2B22F524000DD076 /* Preview Assets.xcassets */; };
+		C772B9172B22F524000DD076 /* NewRecurringBookingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C772B9162B22F524000DD076 /* NewRecurringBookingTests.swift */; };
+		C772B9212B22F524000DD076 /* NewRecurringBookingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C772B9202B22F524000DD076 /* NewRecurringBookingUITests.swift */; };
+		C772B9232B22F524000DD076 /* NewRecurringBookingUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C772B9222B22F524000DD076 /* NewRecurringBookingUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C772B9132B22F524000DD076 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C772B8FA2B22F522000DD076 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C772B9012B22F522000DD076;
+			remoteInfo = NewRecurringBooking;
+		};
+		C772B91D2B22F524000DD076 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C772B8FA2B22F522000DD076 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C772B9012B22F522000DD076;
+			remoteInfo = NewRecurringBooking;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		C772B9022B22F522000DD076 /* NewRecurringBooking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewRecurringBooking.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C772B9052B22F522000DD076 /* NewRecurringBookingApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewRecurringBookingApp.swift; sourceTree = "<group>"; };
+		C772B9072B22F522000DD076 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		C772B9092B22F524000DD076 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C772B90C2B22F524000DD076 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		C772B9122B22F524000DD076 /* NewRecurringBookingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NewRecurringBookingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C772B9162B22F524000DD076 /* NewRecurringBookingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewRecurringBookingTests.swift; sourceTree = "<group>"; };
+		C772B91C2B22F524000DD076 /* NewRecurringBookingUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NewRecurringBookingUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C772B9202B22F524000DD076 /* NewRecurringBookingUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewRecurringBookingUITests.swift; sourceTree = "<group>"; };
+		C772B9222B22F524000DD076 /* NewRecurringBookingUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewRecurringBookingUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C772B8FF2B22F522000DD076 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C772B90F2B22F524000DD076 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C772B9192B22F524000DD076 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C772B8F92B22F522000DD076 = {
+			isa = PBXGroup;
+			children = (
+				C772B9042B22F522000DD076 /* NewRecurringBooking */,
+				C772B9152B22F524000DD076 /* NewRecurringBookingTests */,
+				C772B91F2B22F524000DD076 /* NewRecurringBookingUITests */,
+				C772B9032B22F522000DD076 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C772B9032B22F522000DD076 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C772B9022B22F522000DD076 /* NewRecurringBooking.app */,
+				C772B9122B22F524000DD076 /* NewRecurringBookingTests.xctest */,
+				C772B91C2B22F524000DD076 /* NewRecurringBookingUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C772B9042B22F522000DD076 /* NewRecurringBooking */ = {
+			isa = PBXGroup;
+			children = (
+				C772B9052B22F522000DD076 /* NewRecurringBookingApp.swift */,
+				C772B9072B22F522000DD076 /* ContentView.swift */,
+				C772B9092B22F524000DD076 /* Assets.xcassets */,
+				C772B90B2B22F524000DD076 /* Preview Content */,
+			);
+			path = NewRecurringBooking;
+			sourceTree = "<group>";
+		};
+		C772B90B2B22F524000DD076 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				C772B90C2B22F524000DD076 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		C772B9152B22F524000DD076 /* NewRecurringBookingTests */ = {
+			isa = PBXGroup;
+			children = (
+				C772B9162B22F524000DD076 /* NewRecurringBookingTests.swift */,
+			);
+			path = NewRecurringBookingTests;
+			sourceTree = "<group>";
+		};
+		C772B91F2B22F524000DD076 /* NewRecurringBookingUITests */ = {
+			isa = PBXGroup;
+			children = (
+				C772B9202B22F524000DD076 /* NewRecurringBookingUITests.swift */,
+				C772B9222B22F524000DD076 /* NewRecurringBookingUITestsLaunchTests.swift */,
+			);
+			path = NewRecurringBookingUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C772B9012B22F522000DD076 /* NewRecurringBooking */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C772B9262B22F524000DD076 /* Build configuration list for PBXNativeTarget "NewRecurringBooking" */;
+			buildPhases = (
+				C772B8FE2B22F522000DD076 /* Sources */,
+				C772B8FF2B22F522000DD076 /* Frameworks */,
+				C772B9002B22F522000DD076 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NewRecurringBooking;
+			productName = NewRecurringBooking;
+			productReference = C772B9022B22F522000DD076 /* NewRecurringBooking.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C772B9112B22F524000DD076 /* NewRecurringBookingTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C772B9292B22F524000DD076 /* Build configuration list for PBXNativeTarget "NewRecurringBookingTests" */;
+			buildPhases = (
+				C772B90E2B22F524000DD076 /* Sources */,
+				C772B90F2B22F524000DD076 /* Frameworks */,
+				C772B9102B22F524000DD076 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C772B9142B22F524000DD076 /* PBXTargetDependency */,
+			);
+			name = NewRecurringBookingTests;
+			productName = NewRecurringBookingTests;
+			productReference = C772B9122B22F524000DD076 /* NewRecurringBookingTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		C772B91B2B22F524000DD076 /* NewRecurringBookingUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C772B92C2B22F524000DD076 /* Build configuration list for PBXNativeTarget "NewRecurringBookingUITests" */;
+			buildPhases = (
+				C772B9182B22F524000DD076 /* Sources */,
+				C772B9192B22F524000DD076 /* Frameworks */,
+				C772B91A2B22F524000DD076 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C772B91E2B22F524000DD076 /* PBXTargetDependency */,
+			);
+			name = NewRecurringBookingUITests;
+			productName = NewRecurringBookingUITests;
+			productReference = C772B91C2B22F524000DD076 /* NewRecurringBookingUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C772B8FA2B22F522000DD076 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					C772B9012B22F522000DD076 = {
+						CreatedOnToolsVersion = 15.0;
+					};
+					C772B9112B22F524000DD076 = {
+						CreatedOnToolsVersion = 15.0;
+						TestTargetID = C772B9012B22F522000DD076;
+					};
+					C772B91B2B22F524000DD076 = {
+						CreatedOnToolsVersion = 15.0;
+						TestTargetID = C772B9012B22F522000DD076;
+					};
+				};
+			};
+			buildConfigurationList = C772B8FD2B22F522000DD076 /* Build configuration list for PBXProject "NewRecurringBooking" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C772B8F92B22F522000DD076;
+			productRefGroup = C772B9032B22F522000DD076 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C772B9012B22F522000DD076 /* NewRecurringBooking */,
+				C772B9112B22F524000DD076 /* NewRecurringBookingTests */,
+				C772B91B2B22F524000DD076 /* NewRecurringBookingUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C772B9002B22F522000DD076 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C772B90D2B22F524000DD076 /* Preview Assets.xcassets in Resources */,
+				C772B90A2B22F524000DD076 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C772B9102B22F524000DD076 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C772B91A2B22F524000DD076 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C772B8FE2B22F522000DD076 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C772B9082B22F522000DD076 /* ContentView.swift in Sources */,
+				C772B9062B22F522000DD076 /* NewRecurringBookingApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C772B90E2B22F524000DD076 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C772B9172B22F524000DD076 /* NewRecurringBookingTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C772B9182B22F524000DD076 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C772B9212B22F524000DD076 /* NewRecurringBookingUITests.swift in Sources */,
+				C772B9232B22F524000DD076 /* NewRecurringBookingUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C772B9142B22F524000DD076 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C772B9012B22F522000DD076 /* NewRecurringBooking */;
+			targetProxy = C772B9132B22F524000DD076 /* PBXContainerItemProxy */;
+		};
+		C772B91E2B22F524000DD076 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C772B9012B22F522000DD076 /* NewRecurringBooking */;
+			targetProxy = C772B91D2B22F524000DD076 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		C772B9242B22F524000DD076 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		C772B9252B22F524000DD076 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C772B9272B22F524000DD076 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"NewRecurringBooking/Preview Content\"";
+				DEVELOPMENT_TEAM = 2D5Y7FTU88;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Xplor.NewRecurringBooking;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C772B9282B22F524000DD076 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"NewRecurringBooking/Preview Content\"";
+				DEVELOPMENT_TEAM = 2D5Y7FTU88;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Xplor.NewRecurringBooking;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		C772B92A2B22F524000DD076 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2D5Y7FTU88;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Xplor.NewRecurringBookingTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NewRecurringBooking.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/NewRecurringBooking";
+			};
+			name = Debug;
+		};
+		C772B92B2B22F524000DD076 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2D5Y7FTU88;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Xplor.NewRecurringBookingTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NewRecurringBooking.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/NewRecurringBooking";
+			};
+			name = Release;
+		};
+		C772B92D2B22F524000DD076 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2D5Y7FTU88;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Xplor.NewRecurringBookingUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = NewRecurringBooking;
+			};
+			name = Debug;
+		};
+		C772B92E2B22F524000DD076 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2D5Y7FTU88;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Xplor.NewRecurringBookingUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = NewRecurringBooking;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C772B8FD2B22F522000DD076 /* Build configuration list for PBXProject "NewRecurringBooking" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C772B9242B22F524000DD076 /* Debug */,
+				C772B9252B22F524000DD076 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C772B9262B22F524000DD076 /* Build configuration list for PBXNativeTarget "NewRecurringBooking" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C772B9272B22F524000DD076 /* Debug */,
+				C772B9282B22F524000DD076 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C772B9292B22F524000DD076 /* Build configuration list for PBXNativeTarget "NewRecurringBookingTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C772B92A2B22F524000DD076 /* Debug */,
+				C772B92B2B22F524000DD076 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C772B92C2B22F524000DD076 /* Build configuration list for PBXNativeTarget "NewRecurringBookingUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C772B92D2B22F524000DD076 /* Debug */,
+				C772B92E2B22F524000DD076 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C772B8FA2B22F522000DD076 /* Project object */;
+}
