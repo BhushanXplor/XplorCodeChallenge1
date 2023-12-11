@@ -7,8 +7,8 @@
 
 import SwiftUI
 
-struct ListDetailView: View {
-    @Binding var item: String
+struct RadioButton: View {
+     var item: String
     @Binding var selectedItem: String
 
     @State var isChecked: Bool = false
@@ -16,7 +16,7 @@ struct ListDetailView: View {
     var body: some View {
         Group{
             HStack {
-                if isChecked {
+                if selectedItem == item {
                     ZStack{
                         Circle()
                             .fill(Color.blue)
@@ -25,10 +25,8 @@ struct ListDetailView: View {
                             .fill(Color.white)
                             .frame(width: 8, height: 8)
                     }.onTapGesture {
-//                        self.isChecked = item == selectedItem
-//                        self.checked = false
                         self.isChecked = !isChecked
-
+                        selectedItem = ""
                         print("tap1")
                     }
                 } else {
@@ -37,21 +35,17 @@ struct ListDetailView: View {
                         .frame(width: 20, height: 20)
                         .overlay(Circle().stroke(Color.gray, lineWidth: 1))
                         .onTapGesture {
-//                            self.isChecked = item == selectedItem
-
                             self.isChecked = !isChecked
-                        }
+                            selectedItem = item
 
+                        }
                 }
 
-                Text("\(item)")
-                    .font(.system(size: 16))
-                    
             }.frame(height: 24)
-        }.padding()
+        }
     }
 }
 
 #Preview {
-    ListDetailView(item: .constant("Child Name"), selectedItem: .constant("Child Name"))
+    RadioButton(item: "item", selectedItem: .constant("item1"))
 }

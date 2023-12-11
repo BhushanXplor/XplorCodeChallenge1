@@ -7,53 +7,74 @@
 
 import SwiftUI
 
+
 struct ContentView: View {
     @State private var selectedChild: String = ""
     @State private var selectedRoom: String = ""
     
-    @State private var childData: [String] = ["John Smith", "Emily Smith"]
-    @State private var roomData: [String] = ["Before school care", "Long Day Care"]
-
+    @State private var birthDate = Date.now
+    
+    var childData: [String] = ["John Smith", "Emily Smith"]
+    var roomData: [String] = ["Before school care", "Long Day Care"]
+    
+    @State var startDate = Date()
+    @State var endDate = Date()
+    
+    var rows: [GridItem] = Array(repeating: .init(.flexible()), count: 7)
+    @State  var selectedDays: [WeakDays] = []
+    
+    let layout = [
+        GridItem(.adaptive (minimum: 7, maximum: 7))
+    ]
+    
     var body: some View {
         NavigationView {
-            
             VStack {
-                
                 VStack {
-                    Text("Who's going?")
-                        .font(.headline)
-                        .padding(.trailing, 180)
-                        .padding(.top, 20)
+                    DetailListView(title: "Who's going?", childData: childData, selectedChild: $selectedChild)
                     
-                    ChildListView(childData: $childData, selectedItem: $selectedChild)
+                    DetailListView(title: "Choose a room", childData: roomData, selectedChild: $selectedRoom)
                 }
-                .border(.gray, width: 2)
-                .padding()
                 
-                
-                VStack {
-                    Text("Choose a room")
-                        .font(.headline)
-                        .padding(.trailing, 170)
-                        .padding(.top, 20)
+                HStack {
+                    Spacer()
+                    DateView(title: "Start date", date: $startDate)
+                    Spacer()
+                    DateView(title: "End date", date: $endDate)
+                    Spacer()
                     
-                    ChildListView(childData: $roomData, selectedItem: $selectedRoom)
                 }
-                .border(.gray, width: 2)
-                .padding()
+                .padding(.leading, 50)
+                .padding(.trailing, 50)
+                
+                Spacer()
+                
+                VStack(spacing: -30) {
+                    Text("Choose days")
+                        .font(.headline)
+                        .padding(-20)
+                    
+                    LazyVGrid(columns: rows, spacing: 20,content: {
+                        ForEach(WeakDays.allCases, id: \.self) { item in
+                            WeakDaysView(item: item, items: $selectedDays)
+                        }
+                    })
+                    .padding(40)
+                }
                 
                 Button(action: {
-                    print("child Name = \(self.selectedChild) && room Name = \(self.selectedRoom)")
+                    print("child Name = \(self.selectedChild) && room Name = \(self.selectedRoom) Start Date = \(startDate) && end date = \(endDate)")
+                    
+                    print("selected days = \(selectedDays)")
                 }, label: {
-                    Text("Button")
+                    Text("Review Bookings")
                 })
+                .buttonStyle(.borderedProminent)
+                .controlSize(.large)
+                
             }.navigationTitle("New Recurring Booking")
-            
-            
-           
         }
     }
-    
     
 }
 

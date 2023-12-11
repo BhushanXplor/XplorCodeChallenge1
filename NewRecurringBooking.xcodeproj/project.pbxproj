@@ -14,11 +14,11 @@
 		C772B9172B22F524000DD076 /* NewRecurringBookingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C772B9162B22F524000DD076 /* NewRecurringBookingTests.swift */; };
 		C772B9212B22F524000DD076 /* NewRecurringBookingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C772B9202B22F524000DD076 /* NewRecurringBookingUITests.swift */; };
 		C772B9232B22F524000DD076 /* NewRecurringBookingUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C772B9222B22F524000DD076 /* NewRecurringBookingUITestsLaunchTests.swift */; };
-		C7B2173A2B22FC2A00BB6DFC /* ListDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7B217392B22FC2A00BB6DFC /* ListDetailView.swift */; };
-		C7B2173E2B22FEC400BB6DFC /* ChildListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7B2173D2B22FEC400BB6DFC /* ChildListView.swift */; };
-		C7B217402B23146700BB6DFC /* RoomListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7B2173F2B23146700BB6DFC /* RoomListView.swift */; };
-		C7B217422B23182600BB6DFC /* ChildModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7B217412B23182600BB6DFC /* ChildModel.swift */; };
-		C7B217442B231EF100BB6DFC /* DatePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7B217432B231EF100BB6DFC /* DatePickerView.swift */; };
+		C7B2173A2B22FC2A00BB6DFC /* RadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7B217392B22FC2A00BB6DFC /* RadioButton.swift */; };
+		C7B217602B237ED000BB6DFC /* DetailListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7B2175F2B237ED000BB6DFC /* DetailListView.swift */; };
+		C7B217622B23804000BB6DFC /* DateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7B217612B23804000BB6DFC /* DateView.swift */; };
+		C7B217642B23843300BB6DFC /* WeakDaysView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7B217632B23843300BB6DFC /* WeakDaysView.swift */; };
+		C7B217662B26C9A600BB6DFC /* TestUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7B217652B26C9A600BB6DFC /* TestUI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,11 +49,11 @@
 		C772B91C2B22F524000DD076 /* NewRecurringBookingUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NewRecurringBookingUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C772B9202B22F524000DD076 /* NewRecurringBookingUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewRecurringBookingUITests.swift; sourceTree = "<group>"; };
 		C772B9222B22F524000DD076 /* NewRecurringBookingUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewRecurringBookingUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		C7B217392B22FC2A00BB6DFC /* ListDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListDetailView.swift; sourceTree = "<group>"; };
-		C7B2173D2B22FEC400BB6DFC /* ChildListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildListView.swift; sourceTree = "<group>"; };
-		C7B2173F2B23146700BB6DFC /* RoomListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomListView.swift; sourceTree = "<group>"; };
-		C7B217412B23182600BB6DFC /* ChildModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildModel.swift; sourceTree = "<group>"; };
-		C7B217432B231EF100BB6DFC /* DatePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerView.swift; sourceTree = "<group>"; };
+		C7B217392B22FC2A00BB6DFC /* RadioButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioButton.swift; sourceTree = "<group>"; };
+		C7B2175F2B237ED000BB6DFC /* DetailListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailListView.swift; sourceTree = "<group>"; };
+		C7B217612B23804000BB6DFC /* DateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateView.swift; sourceTree = "<group>"; };
+		C7B217632B23843300BB6DFC /* WeakDaysView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeakDaysView.swift; sourceTree = "<group>"; };
+		C7B217652B26C9A600BB6DFC /* TestUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestUI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,11 +106,11 @@
 			children = (
 				C772B9052B22F522000DD076 /* NewRecurringBookingApp.swift */,
 				C772B9072B22F522000DD076 /* ContentView.swift */,
-				C7B217392B22FC2A00BB6DFC /* ListDetailView.swift */,
-				C7B2173D2B22FEC400BB6DFC /* ChildListView.swift */,
-				C7B2173F2B23146700BB6DFC /* RoomListView.swift */,
-				C7B217412B23182600BB6DFC /* ChildModel.swift */,
-				C7B217432B231EF100BB6DFC /* DatePickerView.swift */,
+				C7B2175F2B237ED000BB6DFC /* DetailListView.swift */,
+				C7B217612B23804000BB6DFC /* DateView.swift */,
+				C7B217632B23843300BB6DFC /* WeakDaysView.swift */,
+				C7B217392B22FC2A00BB6DFC /* RadioButton.swift */,
+				C7B217652B26C9A600BB6DFC /* TestUI.swift */,
 				C772B9092B22F524000DD076 /* Assets.xcassets */,
 				C772B90B2B22F524000DD076 /* Preview Content */,
 			);
@@ -272,13 +272,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C7B217422B23182600BB6DFC /* ChildModel.swift in Sources */,
-				C7B2173A2B22FC2A00BB6DFC /* ListDetailView.swift in Sources */,
-				C7B2173E2B22FEC400BB6DFC /* ChildListView.swift in Sources */,
+				C7B217642B23843300BB6DFC /* WeakDaysView.swift in Sources */,
+				C7B217602B237ED000BB6DFC /* DetailListView.swift in Sources */,
+				C7B217622B23804000BB6DFC /* DateView.swift in Sources */,
+				C7B2173A2B22FC2A00BB6DFC /* RadioButton.swift in Sources */,
+				C7B217662B26C9A600BB6DFC /* TestUI.swift in Sources */,
 				C772B9082B22F522000DD076 /* ContentView.swift in Sources */,
-				C7B217442B231EF100BB6DFC /* DatePickerView.swift in Sources */,
 				C772B9062B22F522000DD076 /* NewRecurringBookingApp.swift in Sources */,
-				C7B217402B23146700BB6DFC /* RoomListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
