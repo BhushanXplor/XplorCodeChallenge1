@@ -1,9 +1,9 @@
-//
-//  DetailListView.swift
-//  NewRecurringBooking
-//
-//  Created by Bhushan Gawande on 08/12/23.
-//
+    //
+    //  DetailListView.swift
+    //  NewRecurringBooking
+    //
+    //  Created by Bhushan Gawande on 08/12/23.
+    //
 
 import SwiftUI
 

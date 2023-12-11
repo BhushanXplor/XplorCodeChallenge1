@@ -11,7 +11,7 @@ import SwiftUI
 struct NewRecurringBookingApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            NewBookingView()
         }
     }
 }

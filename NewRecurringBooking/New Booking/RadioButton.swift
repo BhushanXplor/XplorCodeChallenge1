@@ -1,16 +1,16 @@
-//
-//  ListDetailView.swift
-//  NewRecurringBooking
-//
-//  Created by Bhushan Gawande on 08/12/23.
-//
+    //
+    //  ListDetailView.swift
+    //  NewRecurringBooking
+    //
+    //  Created by Bhushan Gawande on 08/12/23.
+    //
 
 import SwiftUI
 
 struct RadioButton: View {
-     var item: String
+    var item: String
     @Binding var selectedItem: String
-
+    
     @State var isChecked: Bool = false
     
     var body: some View {
@@ -37,10 +37,10 @@ struct RadioButton: View {
                         .onTapGesture {
                             self.isChecked = !isChecked
                             selectedItem = item
-
+                            
                         }
                 }
-
+                
             }.frame(height: 24)
         }
     }
