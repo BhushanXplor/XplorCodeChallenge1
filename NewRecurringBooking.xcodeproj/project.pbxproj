@@ -8,12 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		C772B9062B22F522000DD076 /* NewRecurringBookingApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C772B9052B22F522000DD076 /* NewRecurringBookingApp.swift */; };
-		C772B9082B22F522000DD076 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C772B9072B22F522000DD076 /* ContentView.swift */; };
+		C772B9082B22F522000DD076 /* NewBookingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C772B9072B22F522000DD076 /* NewBookingView.swift */; };
 		C772B90A2B22F524000DD076 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C772B9092B22F524000DD076 /* Assets.xcassets */; };
 		C772B90D2B22F524000DD076 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C772B90C2B22F524000DD076 /* Preview Assets.xcassets */; };
 		C772B9172B22F524000DD076 /* NewRecurringBookingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C772B9162B22F524000DD076 /* NewRecurringBookingTests.swift */; };
 		C772B9212B22F524000DD076 /* NewRecurringBookingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C772B9202B22F524000DD076 /* NewRecurringBookingUITests.swift */; };
 		C772B9232B22F524000DD076 /* NewRecurringBookingUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C772B9222B22F524000DD076 /* NewRecurringBookingUITestsLaunchTests.swift */; };
+		C7B2173A2B22FC2A00BB6DFC /* RadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7B217392B22FC2A00BB6DFC /* RadioButton.swift */; };
+		C7B217602B237ED000BB6DFC /* DetailListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7B2175F2B237ED000BB6DFC /* DetailListView.swift */; };
+		C7B217622B23804000BB6DFC /* DateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7B217612B23804000BB6DFC /* DateView.swift */; };
+		C7B217642B23843300BB6DFC /* WeakDaysView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7B217632B23843300BB6DFC /* WeakDaysView.swift */; };
+		C7B2176B2B26E73300BB6DFC /* BookingSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7B2176A2B26E73300BB6DFC /* BookingSummaryView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +41,7 @@
 /* Begin PBXFileReference section */
 		C772B9022B22F522000DD076 /* NewRecurringBooking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewRecurringBooking.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C772B9052B22F522000DD076 /* NewRecurringBookingApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewRecurringBookingApp.swift; sourceTree = "<group>"; };
-		C772B9072B22F522000DD076 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		C772B9072B22F522000DD076 /* NewBookingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewBookingView.swift; sourceTree = "<group>"; };
 		C772B9092B22F524000DD076 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C772B90C2B22F524000DD076 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		C772B9122B22F524000DD076 /* NewRecurringBookingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NewRecurringBookingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -44,6 +49,11 @@
 		C772B91C2B22F524000DD076 /* NewRecurringBookingUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NewRecurringBookingUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C772B9202B22F524000DD076 /* NewRecurringBookingUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewRecurringBookingUITests.swift; sourceTree = "<group>"; };
 		C772B9222B22F524000DD076 /* NewRecurringBookingUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewRecurringBookingUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		C7B217392B22FC2A00BB6DFC /* RadioButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioButton.swift; sourceTree = "<group>"; };
+		C7B2175F2B237ED000BB6DFC /* DetailListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailListView.swift; sourceTree = "<group>"; };
+		C7B217612B23804000BB6DFC /* DateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateView.swift; sourceTree = "<group>"; };
+		C7B217632B23843300BB6DFC /* WeakDaysView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeakDaysView.swift; sourceTree = "<group>"; };
+		C7B2176A2B26E73300BB6DFC /* BookingSummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingSummaryView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,7 +105,8 @@
 			isa = PBXGroup;
 			children = (
 				C772B9052B22F522000DD076 /* NewRecurringBookingApp.swift */,
-				C772B9072B22F522000DD076 /* ContentView.swift */,
+				C7B217672B26E6F200BB6DFC /* New Booking */,
+				C7B2176A2B26E73300BB6DFC /* BookingSummaryView.swift */,
 				C772B9092B22F524000DD076 /* Assets.xcassets */,
 				C772B90B2B22F524000DD076 /* Preview Content */,
 			);
@@ -125,6 +136,18 @@
 				C772B9222B22F524000DD076 /* NewRecurringBookingUITestsLaunchTests.swift */,
 			);
 			path = NewRecurringBookingUITests;
+			sourceTree = "<group>";
+		};
+		C7B217672B26E6F200BB6DFC /* New Booking */ = {
+			isa = PBXGroup;
+			children = (
+				C772B9072B22F522000DD076 /* NewBookingView.swift */,
+				C7B2175F2B237ED000BB6DFC /* DetailListView.swift */,
+				C7B217612B23804000BB6DFC /* DateView.swift */,
+				C7B217632B23843300BB6DFC /* WeakDaysView.swift */,
+				C7B217392B22FC2A00BB6DFC /* RadioButton.swift */,
+			);
+			path = "New Booking";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,7 +280,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C772B9082B22F522000DD076 /* ContentView.swift in Sources */,
+				C7B217642B23843300BB6DFC /* WeakDaysView.swift in Sources */,
+				C7B2176B2B26E73300BB6DFC /* BookingSummaryView.swift in Sources */,
+				C7B217602B237ED000BB6DFC /* DetailListView.swift in Sources */,
+				C7B217622B23804000BB6DFC /* DateView.swift in Sources */,
+				C7B2173A2B22FC2A00BB6DFC /* RadioButton.swift in Sources */,
+				C772B9082B22F522000DD076 /* NewBookingView.swift in Sources */,
 				C772B9062B22F522000DD076 /* NewRecurringBookingApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
