@@ -16,7 +16,7 @@ struct ChildListView: View {
         VStack {
             Text(title)
                 .font(.headline)
-                .padding(.trailing, 235)
+                .padding(.trailing, 240)
                 .padding(.top, 20)
             
             List {

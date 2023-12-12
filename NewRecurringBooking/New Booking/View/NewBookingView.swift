@@ -17,11 +17,13 @@ struct NewBookingView: View {
     @State private var selectedRoom: String = ""
     @State private var birthDate = Date.now
     @State private var navigationPath = NavigationPath()
-    @State var startDate = Date()
-    @State var endDate = Date()
-    @State var selectedDays: [WeakDays] = []
+    @State private var startDate = Date()
+    @State private var endDate = Date()
+    @State private var selectedDays: [WeakDays] = []
     
-    @ObservedObject var viewModel = NewBookingViewModel()
+    @State private var isButtonDisables: Bool = true
+    
+    @ObservedObject private var viewModel = NewBookingViewModel()
     
     var rows: [GridItem] = Array(repeating: .init(.flexible()), count: 7)
     let layout = [
@@ -33,14 +35,31 @@ struct NewBookingView: View {
         NavigationStack(path: $navigationPath) {
             VStack {
                 VStack {
-                    ChildListView(title: ViewType.child.rawValue, childData: viewModel.children, selectedChild: $selectedChildId)
-                        .onTapGesture {
-                            print("selected child id = \(selectedChildId)")
-                            viewModel.getRoomsData(id: selectedChildId)
-                            selectedRoom = ""
+                    ZStack {
+                        VStack {
+                            ChildListView(title: ViewType.child.rawValue, childData: viewModel.children, selectedChild: $selectedChildId)
+                                .onTapGesture {
+                                    print("selected child id = \(selectedChildId)")
+                                    viewModel.rooms.removeAll()
+                                    selectedRoom = ""
+                                    viewModel.getRoomsData(id: selectedChildId)
+                                }
+                            
                         }
+                        
+                        LoaderView(showingAlert: $viewModel.showChildProgressView)
+                    }
                     
-                    RoomListView(title: ViewType.room.rawValue, roomData: viewModel.rooms, selectedRoom: $selectedRoom)
+                    ZStack {
+                        VStack {
+                            RoomListView(title: ViewType.room.rawValue, roomData: viewModel.rooms, selectedRoom: $selectedRoom)
+                                .onSubmit {
+                                    print("onsubmit")
+                                }
+                        }
+                        
+                        LoaderView(showingAlert: $viewModel.showRoomProgressView)
+                    }
                 }
                 
                 HStack {
@@ -73,16 +92,20 @@ struct NewBookingView: View {
                 HStack(alignment: .center, spacing: 20) {
                     Spacer()
                     Button {
+                        
+                            //                        showingAlert.toggle()
+                        
                         print("selected child = \(selectedChildId)")
                         print("selected Room = \(selectedRoom)")
                         print("Start date = \(startDate)")
                         print("end date = \(endDate)")
-                        print("Selected Days = \(selectedDays)")                        
-                        //navigationPath.append("SummaryView")
+                        print("Selected Days = \(selectedDays)")
+                            //navigationPath.append("SummaryView")
                     } label: {
                         Text("Review bookings")
                             .frame(maxWidth: .infinity)
                     }
+                    .disabled(isButtonDisables)
                     .buttonStyle(.borderless)
                     .frame(height: 50)
                     .background(.accent)
@@ -105,6 +128,9 @@ struct NewBookingView: View {
                 viewModel.getChildrenData()
             })
         }
+            //        .alert("Important message", isPresented: $showingAlert) {
+            //            Button("OK", role: .cancel) { }
+            //        }
     }
 }
 

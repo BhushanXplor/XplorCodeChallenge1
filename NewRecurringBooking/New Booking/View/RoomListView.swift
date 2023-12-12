@@ -16,10 +16,10 @@ struct RoomListView: View {
         VStack {
             Text(title)
                 .font(.headline)
-                .padding(.trailing, 235)
+                .padding(.trailing, 210)
                 .padding(.top, 20)
             List {
-                ForEach(roomData, id: \.feeFkey) { item in
+                ForEach(roomData, id:\.id) { item in
                     HStack {
                         RadioButton(id: item.roomName, selectedId: $selectedRoom)
                         Text(getlabelValue(item))
@@ -50,5 +50,5 @@ struct RoomListView: View {
 }
 
 #Preview {
-    RoomListView(title: "ListView", roomData: [RoomResponse(fee: "AP", endTime: "6pm", feeFkey: "", roomFkey: "Key", roomName: "Room Name", startTime: "5am")], selectedRoom: .constant("item"))
+    RoomListView(title: "Choose room", roomData: [RoomResponse( fee: "AP", endTime: "6pm", feeFkey: "", roomFkey: "Key", roomName: "Room Name", startTime: "5am")], selectedRoom: .constant("item"))
 }

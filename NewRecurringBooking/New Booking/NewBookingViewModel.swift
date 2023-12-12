@@ -19,72 +19,45 @@ class NewBookingViewModel: ObservableObject {
     @Published var children: [ChildrenResponse] = []
     @Published var rooms: [RoomResponse] = []
     
+    @Published var showChildProgressView: Bool = false
+    @Published var showRoomProgressView: Bool = false
+
     private var cancellables = Set<AnyCancellable>()
     
     init() {
     }
     
     func getChildrenData() {
-        guard let url = URL(string: APIEndpoint.BaseURL + APIEndpoint.getChild) else {return}
-        var request = URLRequest(url: url)
-        request.httpMethod = "GET"
-        request.addValue(APIEndpoint.token, forHTTPHeaderField: "x-collection-access-token")
-        
-        URLSession.shared.dataTaskPublisher(for: request)
-            .receive(on: DispatchQueue.main)
-            .map(\.data)
-            .decode(type: ChildrenModel.self, decoder: JSONDecoder())
-            .sink { [weak self] response in
-                
-                switch response {
-                    case .failure(let error):
-                        print("finished failure = \(error)")
+        showChildProgressView = true
+        NetworkManager.shared.get(id: APIEndpoint.getChild, type: ChildrenModel.self) { result, error in
+            print("getChildrenData error = \(String(describing: error))")
+            self.showChildProgressView = false
 
-                    case .finished:
-                        print("finished Success")
-                }
-                
-            } receiveValue: { [weak self] bookingData in
-                
-                if let data = bookingData.data.children as? [ChildrenResponse] {
-                    self?.children = data
-                    print("data = \(data)")
-                    
-                    data.forEach { item in
-                        print("item = \(item)")
+            if error == nil && result != nil {
+                if let data = result {
+                    if let data = data.data.children as? [ChildrenResponse] {
+                        self.children = data
                     }
                 }
             }
-            .store(in: &cancellables)
+        }
     }
     
     func getRoomsData(id: String) {
-        guard let url = URL(string: APIEndpoint.BaseURL + id) else {return}
-        var request = URLRequest(url: url)
-        request.httpMethod = "GET"
-        request.addValue(APIEndpoint.token, forHTTPHeaderField: "x-collection-access-token")
-        
-        URLSession.shared.dataTaskPublisher(for: request)
-            .receive(on: DispatchQueue.main)
-            .map(\.data)
-            .decode(type: RoomModel.self, decoder: JSONDecoder())
-            .sink { [weak self] response in
-                
-                switch response {
-                    case .failure(let error):
-                        print("finished failure = \(error)")
+        showRoomProgressView = true
 
-                    case .finished:
-                        print("finished Success")
-                }
-                
-            } receiveValue: { [weak self] bookingData in
-                
-                if let data = bookingData.data.bookingRooms as? [RoomResponse] {
-                    self?.rooms = data
+        NetworkManager.shared.get(id: id, type: RoomModel.self) { result, error in
+            print("getRoomsData error = \(String(describing: error))")
+            self.showRoomProgressView = false
+
+            if error == nil && result != nil {
+                if let data = result {
+                    if let data = data.data.bookingRooms as? [RoomResponse] {
+                        self.rooms = data
+                    }
                 }
             }
-            .store(in: &cancellables)
+        }
     }
     
 }
