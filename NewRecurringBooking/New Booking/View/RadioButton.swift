@@ -8,15 +8,14 @@
 import SwiftUI
 
 struct RadioButton: View {
-    var item: String
-    @Binding var selectedItem: String
-    
+    var id: String
+    @Binding var selectedId: String
     @State var isChecked: Bool = false
     
     var body: some View {
         Group{
             HStack {
-                if selectedItem == item {
+                if selectedId == id {
                     ZStack{
                         Circle()
                             .fill(Color.blue)
@@ -26,8 +25,8 @@ struct RadioButton: View {
                             .frame(width: 8, height: 8)
                     }.onTapGesture {
                         self.isChecked = !isChecked
-                        selectedItem = ""
-                        print("tap1")
+                        selectedId = id
+                        print("checked")
                     }
                 } else {
                     Circle()
@@ -36,8 +35,8 @@ struct RadioButton: View {
                         .overlay(Circle().stroke(Color.gray, lineWidth: 1))
                         .onTapGesture {
                             self.isChecked = !isChecked
-                            selectedItem = item
-                            
+                            selectedId = id
+                            print("unchecked")
                         }
                 }
                 
@@ -47,5 +46,5 @@ struct RadioButton: View {
 }
 
 #Preview {
-    RadioButton(item: "item", selectedItem: .constant("item1"))
+    RadioButton(id: "item", selectedId: .constant("item1"))
 }

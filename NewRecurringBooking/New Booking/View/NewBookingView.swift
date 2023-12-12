@@ -7,9 +7,13 @@
 
 import SwiftUI
 
+enum ViewType: String {
+    case child = "Who's going?"
+    case room = "Choose a room"
+}
 
 struct NewBookingView: View {
-    @State private var selectedChild: String = ""
+    @State private var selectedChildId: String = ""
     @State private var selectedRoom: String = ""
     @State private var birthDate = Date.now
     @State private var navigationPath = NavigationPath()
@@ -17,8 +21,8 @@ struct NewBookingView: View {
     @State var endDate = Date()
     @State var selectedDays: [WeakDays] = []
     
-    var childData: [String] = ["John Smith", "Emily Smith"]
-    var roomData: [String] = ["Before school care", "Long Day Care"]
+    @ObservedObject var viewModel = NewBookingViewModel()
+    
     var rows: [GridItem] = Array(repeating: .init(.flexible()), count: 7)
     let layout = [
         GridItem(.adaptive (minimum: 7, maximum: 7))
@@ -29,14 +33,19 @@ struct NewBookingView: View {
         NavigationStack(path: $navigationPath) {
             VStack {
                 VStack {
-                    DetailListView(title: "Who's going?", childData: childData, selectedChild: $selectedChild)
+                    ChildListView(title: ViewType.child.rawValue, childData: viewModel.children, selectedChild: $selectedChildId)
+                        .onTapGesture {
+                            print("selected child id = \(selectedChildId)")
+                            viewModel.getRoomsData(id: selectedChildId)
+                            selectedRoom = ""
+                        }
                     
-                    DetailListView(title: "Choose a room", childData: roomData, selectedChild: $selectedRoom)
+                    RoomListView(title: ViewType.room.rawValue, roomData: viewModel.rooms, selectedRoom: $selectedRoom)
                 }
                 
                 HStack {
                     Spacer()
-                    DateView(dateType: .start, date: $startDate, fromDate: startDate)
+                    DateView(dateType: .start,date: $startDate, fromDate: Date())
                     Spacer()
                     DateView(dateType: .end, date: $endDate, fromDate: startDate)
                     Spacer()
@@ -64,7 +73,12 @@ struct NewBookingView: View {
                 HStack(alignment: .center, spacing: 20) {
                     Spacer()
                     Button {
-                        navigationPath.append("SummaryView")
+                        print("selected child = \(selectedChildId)")
+                        print("selected Room = \(selectedRoom)")
+                        print("Start date = \(startDate)")
+                        print("end date = \(endDate)")
+                        print("Selected Days = \(selectedDays)")                        
+                        //navigationPath.append("SummaryView")
                     } label: {
                         Text("Review bookings")
                             .frame(maxWidth: .infinity)
@@ -87,6 +101,9 @@ struct NewBookingView: View {
                 }
             }
             .navigationBarBackButtonHidden(true)
+            .onAppear(perform: {
+                viewModel.getChildrenData()
+            })
         }
     }
 }

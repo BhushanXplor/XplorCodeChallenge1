@@ -7,9 +7,9 @@
 
 import SwiftUI
 
-struct DetailListView: View {
+struct ChildListView: View {
     var title: String
-    var childData: [String]
+    var childData: [ChildrenResponse]
     @Binding var selectedChild: String
     
     var body: some View {
@@ -20,11 +20,11 @@ struct DetailListView: View {
                 .padding(.top, 20)
             
             List {
-                ForEach(0..<childData.count, id: \.self) { index in
-                    let item = childData[index]
+                ForEach(childData, id: \.availableRoomsId) { item in
                     HStack {
-                        RadioButton(item: item, selectedItem: $selectedChild)
-                        Text("\(item)")
+                        RadioButton(id: item.availableRoomsId, selectedId: $selectedChild)
+                        
+                        Text("\(item.fullName)")
                             .font(.system(size: 16))
                     }
                     .onTapGesture {
@@ -42,5 +42,5 @@ struct DetailListView: View {
 }
 
 #Preview {
-    DetailListView(title: "List View", childData: ["item1", "item2"], selectedChild: .constant("item1"))
+    ChildListView(title: "List View", childData: [ChildrenResponse(age: 7, fkey: "key", fullName: "Full Name", availableRoomsId: "roo id value")], selectedChild: .constant("item1"))
 }

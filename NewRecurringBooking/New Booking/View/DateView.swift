@@ -28,13 +28,13 @@ struct DateView: View {
                     .frame(width: 24, height: 24, alignment: .leading)
                     .padding(.leading, 10)
                 
-                if dateType == .start {
-                    DatePicker("", selection: $date, in: Date()... ,displayedComponents: [.date])
-                        .padding(.leading, -20)
-                } else {
+//                if dateType == .start {
                     DatePicker("", selection: $date, in: fromDate... ,displayedComponents: [.date])
                         .padding(.leading, -20)
-                }
+//                } else {
+//                    DatePicker("", selection: $date, in: fromDate... ,displayedComponents: [.date])
+//                        .padding(.leading, -20)
+//                }
                 
                 Spacer()
             }
@@ -45,5 +45,5 @@ struct DateView: View {
 }
 
 #Preview {
-    DateView(dateType: .end, date: .constant(Date()), fromDate: Date())
+    DateView(dateType: .start ,date: .constant(Date()), fromDate: Date())
 }

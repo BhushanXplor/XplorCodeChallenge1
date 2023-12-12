@@ -17,7 +17,6 @@ struct BookingSummaryView: View {
                 HStack {
                     Text("Summary")
                         .font(.headline)
-                        .fontWeight(.medium)
                         .padding()
                     
                     Spacer()
