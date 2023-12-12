@@ -24,4 +24,21 @@ class Utils {
         return formattedTime
     }
     
+    func getDate(_ date: Date) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd MMM yyy"
+        return dateFormatter.string(from: date)
+    }
+}
+
+extension DateInterval {
+    func dates(matching components: DateComponents) -> [Date] {
+        var start = self.start
+        var dates: [Date] = []
+        while let date = Calendar.current.nextDate(after: start, matching: components, matchingPolicy: .strict), date <= end {
+            dates.append(date)
+            start = date
+        }
+        return dates
+    }
 }

@@ -9,6 +9,8 @@ import SwiftUI
 
 struct BookingSummaryView: View {
     
+    let bookingData: BookingDataModel
+    
     @Environment(\.dismiss) private var dismiss
     
     var body: some View {
@@ -26,7 +28,7 @@ struct BookingSummaryView: View {
                     Image(systemName: "person.circle.fill")
                         .padding(.leading, 10)
                     
-                    Text("Child Name")
+                    Text(bookingData.selectedChildDetails?.fullName ?? "Child Name")
                         .font(.headline)
                         .frame(alignment: .leading)
                     Spacer()
@@ -37,23 +39,32 @@ struct BookingSummaryView: View {
                 .padding(.leading, 20)
                 
                 VStack (alignment: .leading, spacing: 2.0) {
-                    Text("Before school care - 5am - 8:30am")
+                    let roomDetails = getlabelValue(bookingData.selectedRoomDetails)
+                    
+                    Text(roomDetails)
                         .font(.headline)
                         .padding(.bottom, 5.0)
                     
-                    Text("from 2 Jan 2023")
+                    Text("from \(Utils.shared.getDate(bookingData.startDate))")
                     
-                    Text("Every Mon, Tue, Wed")
-                    Text("Ends 20 Dec 2025")
+                    let days = bookingData.selectedDays.map{ $0.rawValue }
+                    let daysValue = (days.count == 7) ? "Everyday" : "Every \(days.joined(separator: ", "))"
                     
-                    Text("You are booking 156 days")
+                    Text(daysValue)
+                    Text("Ends \(Utils.shared.getDate(bookingData.endDate))")
+                    
+                    let diffInDays = Calendar.current.dateComponents([.day], from: bookingData.startDate, to: bookingData.endDate).day
+                    
+                    Text("You are booking \(getTotalDays()) days")
                         .padding(.top)
                         .padding(.leading, 0)
                     
-                    Text("Booking Reference Number")
+                    Text("Booking Reference Number:")
                         .font(.headline)
                         .padding(.top)
-                    Text("8b3a437d-ed3e-485a-8130-b6a416d87")
+                    
+                    let id = bookingData.selectedChildDetails?.availableRoomsId ?? UUID().uuidString
+                    Text(id)
                 }
                 .padding()
                 
@@ -74,18 +85,18 @@ struct BookingSummaryView: View {
                     .font(.headline)
                     
                     Button {
-                        //MARK: done button actiom
+                            //MARK: done button actiom
                     } label: {
                         Text("DONE")
                             .frame(maxWidth: .infinity)
-
+                        
                     }
                     .buttonStyle(.borderless)
                     .frame(height: 50)
                     .background(.accent)
                     .font(.headline)
                     .foregroundColor(.white)
-
+                    
                 }
                 .padding(10)
             }
@@ -94,8 +105,29 @@ struct BookingSummaryView: View {
             .navigationBarBackButtonHidden(true)
             .edgesIgnoringSafeArea([.top])
     }
+    
+    func getlabelValue(_ item: RoomResponse?) -> String {
+        let fromdate = Utils.shared.convertToAmPm(timeString: (item?.startTime ?? "")) ?? ""
+        let toDate = Utils.shared.convertToAmPm(timeString: (item?.endTime ?? "")) ?? ""
+        let value = (item?.roomName ?? "") + " - " + "\(fromdate)"  + " - \(toDate)"
+        return value
+    }
+    
+    func getTotalDays() -> Int {
+        let dateInterval: DateInterval = .init(start: bookingData.startDate, end: bookingData.endDate)
+        var alldays: [WeakDays] = [.Sat, .Sun, .Mon, .Tues, .Wed, .Thu, .Fri]
+        var totalDays = 0
+        
+        for item in bookingData.selectedDays {
+            let index = alldays.firstIndex(of: item)
+            let day = dateInterval.dates(matching: .init(weekday: index))
+            totalDays =  totalDays + day.count
+        }
+        
+        return totalDays
+    }
 }
 
 #Preview {
-    BookingSummaryView()
+    BookingSummaryView(bookingData: BookingDataModel())
 }

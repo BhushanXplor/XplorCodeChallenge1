@@ -8,6 +8,12 @@
 import Foundation
 import Combine
 
+struct APIEndpoint {
+    static let BaseURL = "https://api.myjson.online/v1/records/"
+    static let getChild = "076c0cb9-c60e-48eb-a447-77e85b700d94"
+    static let token = "66e627a5-cfff-4a8e-b80f-6f0e572bf476"
+}
+
 class NetworkManager {
     static let shared = NetworkManager()
     

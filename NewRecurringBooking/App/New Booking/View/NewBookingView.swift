@@ -13,17 +13,10 @@ enum ViewType: String {
 }
 
 struct NewBookingView: View {
-    @State private var selectedChildId: String = ""
-    @State private var selectedRoom: String = ""
-    @State private var birthDate = Date.now
     @State private var navigationPath = NavigationPath()
-    @State private var startDate = Date()
-    @State private var endDate = Date()
-    @State private var selectedDays: [WeakDays] = []
+    @ObservedObject var viewModel = NewBookingViewModel()
     
-    @State private var isButtonDisables: Bool = true
-    
-    @ObservedObject private var viewModel = NewBookingViewModel()
+    @State private var isPageone = false
     
     var rows: [GridItem] = Array(repeating: .init(.flexible()), count: 7)
     let layout = [
@@ -37,36 +30,34 @@ struct NewBookingView: View {
                 VStack {
                     ZStack {
                         VStack {
-                            ChildListView(title: ViewType.child.rawValue, childData: viewModel.children, selectedChild: $selectedChildId)
+                            ChildListView(title: ViewType.child.rawValue, childData: viewModel.children, selectedChild: $viewModel.bookingDataModel.selectedChildDetails)
                                 .onTapGesture {
-                                    print("selected child id = \(selectedChildId)")
+                                    if let id = viewModel.bookingDataModel.selectedChildDetails?.availableRoomsId as? String {
+                                        viewModel.getRoomsData(id: id)
+                                    }
+                                    
                                     viewModel.rooms.removeAll()
-                                    selectedRoom = ""
-                                    viewModel.getRoomsData(id: selectedChildId)
+                                    viewModel.bookingDataModel.selectedRoomDetails = nil
                                 }
-                            
                         }
                         
-                        LoaderView(showingAlert: $viewModel.showChildProgressView)
+                        LoaderView(showingAlert: $viewModel.bookingDataModel.showChildProgressView)
                     }
                     
                     ZStack {
                         VStack {
-                            RoomListView(title: ViewType.room.rawValue, roomData: viewModel.rooms, selectedRoom: $selectedRoom)
-                                .onSubmit {
-                                    print("onsubmit")
-                                }
+                            RoomListView(title: ViewType.room.rawValue, roomData: viewModel.rooms, selectedRoom: $viewModel.bookingDataModel.selectedRoomDetails)
                         }
                         
-                        LoaderView(showingAlert: $viewModel.showRoomProgressView)
+                        LoaderView(showingAlert: $viewModel.bookingDataModel.showRoomProgressView)
                     }
                 }
                 
                 HStack {
                     Spacer()
-                    DateView(dateType: .start,date: $startDate, fromDate: Date())
+                    DateView(dateType: .start,date: $viewModel.bookingDataModel.startDate, fromDate: Date())
                     Spacer()
-                    DateView(dateType: .end, date: $endDate, fromDate: startDate)
+                    DateView(dateType: .end, date: $viewModel.bookingDataModel.endDate, fromDate: viewModel.bookingDataModel.startDate)
                     Spacer()
                 }
                 .padding(.leading, 50)
@@ -81,7 +72,7 @@ struct NewBookingView: View {
                     
                     LazyVGrid(columns: rows, spacing: 20,content: {
                         ForEach(WeakDays.allCases, id: \.self) { item in
-                            WeakDaysView(item: item, items: $selectedDays)
+                            WeakDaysView(item: item, items: $viewModel.bookingDataModel.selectedDays)
                         }
                     })
                     .padding(40)
@@ -92,25 +83,26 @@ struct NewBookingView: View {
                 HStack(alignment: .center, spacing: 20) {
                     Spacer()
                     Button {
-                        
-                            //                        showingAlert.toggle()
-                        
-                        print("selected child = \(selectedChildId)")
-                        print("selected Room = \(selectedRoom)")
-                        print("Start date = \(startDate)")
-                        print("end date = \(endDate)")
-                        print("Selected Days = \(selectedDays)")
-                            //navigationPath.append("SummaryView")
+                        isPageone.toggle()
                     } label: {
                         Text("Review bookings")
                             .frame(maxWidth: .infinity)
                     }
-                    .disabled(isButtonDisables)
                     .buttonStyle(.borderless)
                     .frame(height: 50)
-                    .background(.accent)
                     .font(.headline)
                     .foregroundColor(.white)
+                    .disabled(!BookingValidation.validateBookingData(data: viewModel.bookingDataModel))
+                    .background(BookingValidation.validateBookingData(data: viewModel.bookingDataModel) ? .accent : .gray)
+                    .alert(isPresented: $viewModel.bookingDataModel.isPresentingErrorAlert, content: {
+                        Alert(title: Text("Alert"), message: Text(viewModel.bookingDataModel.errorMessage), dismissButton: .cancel(Text("Ok")))
+                    })
+                    .navigationDestination(
+                        isPresented: $isPageone) {
+                            BookingSummaryView(bookingData: viewModel.bookingDataModel)
+                            Text("")
+                                .hidden()
+                        }
                     Spacer()
                 }
                 
@@ -120,17 +112,17 @@ struct NewBookingView: View {
             .navigationBarTitleDisplayMode(.inline)
             .navigationDestination(for: String.self) { view in
                 if view == "SummaryView" {
-                    BookingSummaryView()
+                    BookingSummaryView(bookingData: BookingDataModel())
                 }
             }
             .navigationBarBackButtonHidden(true)
             .onAppear(perform: {
                 viewModel.getChildrenData()
             })
+            .alert(isPresented: $viewModel.bookingDataModel.isPresentingErrorAlert, content: {
+                Alert(title: Text("Alert"), message: Text(viewModel.bookingDataModel.errorMessage), dismissButton: .cancel(Text("Ok")))
+            })
         }
-            //        .alert("Important message", isPresented: $showingAlert) {
-            //            Button("OK", role: .cancel) { }
-            //        }
     }
 }
 

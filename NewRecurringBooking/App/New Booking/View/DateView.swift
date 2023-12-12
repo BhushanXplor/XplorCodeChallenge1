@@ -28,14 +28,8 @@ struct DateView: View {
                     .frame(width: 24, height: 24, alignment: .leading)
                     .padding(.leading, 10)
                 
-//                if dateType == .start {
-                    DatePicker("", selection: $date, in: fromDate... ,displayedComponents: [.date])
-                        .padding(.leading, -20)
-//                } else {
-//                    DatePicker("", selection: $date, in: fromDate... ,displayedComponents: [.date])
-//                        .padding(.leading, -20)
-//                }
-                
+                DatePicker("", selection: $date, in: fromDate... ,displayedComponents: [.date])
+                    .padding(.leading, -20)                
                 Spacer()
             }
             .frame(width: 180, height: 55)
